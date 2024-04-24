@@ -5,13 +5,13 @@ from metpy.units import units
 from metpy.plots import Hodograph, SkewT
 import pandas as pd
 import matplotlib.pyplot as plt
-import datetime
+from datetime import datetime
 from siphon.simplewebservice.iastate import IAStateUpperAir
 from metpy.io import add_station_lat_lon
 
 
 def createSounding(year,month,day,hour,station):
-    dt = datetime(year=year,month=month,day=day,hour=hour)
+    dt = datetime(year=year,month=month,day=date,hour=hour)
 
     #convert datetime object to string to add into the IEM url
     t = dt.strftime('%Y%m%d%H%M')
