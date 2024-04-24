@@ -10,7 +10,7 @@ from siphon.simplewebservice.iastate import IAStateUpperAir
 from metpy.io import add_station_lat_lon
 
 
-def createSounding(year,month,day,hour,station):
+def createSounding(year,month,date,hour,station):
     dt = datetime(year=year,month=month,day=date,hour=hour)
 
     #convert datetime object to string to add into the IEM url
@@ -69,11 +69,11 @@ def createSounding(year,month,day,hour,station):
     skew.plot_barbs(wind_pressure[2:],u[2:],v[2:],y_clip_radius=0)
     
     #add title for date and location
-    plt.title(f'{station}\n%04i-%02i-%02i %02iZ'%(year,month,day,hour), fontsize=20)
+    plt.title(f'{station}\n%04i-%02i-%02i %02iZ'%(year,month,date,hour), fontsize=20)
     
     #save figure
     fig.tight_layout()
-    plt.savefig(f'{station}_%04i%02i%02i_%02i.png'%(year,month,day,hour))
+    plt.savefig(f'{station}_%04i%02i%02i_%02i.png'%(year,month,date,hour))
 
 
 
